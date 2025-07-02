@@ -1,7 +1,7 @@
 import { View, Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const HomeScreen = () => {
+const Discover = () => {
   const navigation = useNavigation();
 
   return (
@@ -15,4 +15,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default Discover;

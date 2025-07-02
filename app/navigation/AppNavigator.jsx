@@ -2,19 +2,35 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Image } from "react-native";
-import { Home, Settings } from "lucide-react-native";
+import {
+  Bell,
+  CircleUserRound,
+  Compass,
+  Home,
+  Navigation,
+  PlusCircle,
+  Settings,
+} from "lucide-react-native";
 
-import HomeScreen from "../screens/HomeScreen";
 import Sitting from "../screens/Sitting";
 import UserProfile from "../screens/UserProfile";
+import Discover from "../screens/Discover";
+import LocalScreen from "../screens/LocalScreen";
+import AddScreen from "../screens/AddScreen";
+import Profile from "../screens/Profile";
+import Alert from "../screens/Alert";
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
 const iconMap = {
-  Home: Home,
+  Discover: Compass,
   Settings: Settings,
+  LocalScreen: Navigation,
+  AddScreen: PlusCircle,
+  Alert: Bell,
+  Profile: CircleUserRound,
 };
 
 const getTabIcon = (routeName, color, size) => {
@@ -31,8 +47,11 @@ const TabNavigator = () => (
       tabBarInactiveTintColor: "gray",
     })}
   >
-    <Tab.Screen name="Home" component={HomeScreen} />
-    <Tab.Screen name="Settings" component={Sitting} />
+    <Tab.Screen name="Discover" component={Discover} />
+    <Tab.Screen name="LocalScreen" component={LocalScreen} />
+    <Tab.Screen name="AddScreen" component={AddScreen} />
+    <Tab.Screen name="Alert" component={Alert} />
+    <Tab.Screen name="Profile" component={Profile} />
   </Tab.Navigator>
 );
 
